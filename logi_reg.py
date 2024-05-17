@@ -10,8 +10,17 @@ import mlflow
 import mlflow.sklearn
 import optuna
 import matplotlib
+import subprocess
+import json
 
 matplotlib.use("Agg")
+
+
+# Run 'terraform output -json' to get the outputs as JSON
+outputs = subprocess.check_output(["terraform", "output", "-json"])
+outputs = json.loads(outputs)
+
+mlflow_lb_dns_name = outputs["mlflow_lb_dns_name"]["value"]
 
 
 def get_or_create_experiment(experiment_name):
@@ -39,7 +48,7 @@ experiment_id = get_or_create_experiment("BankChurners")
 mlflow.set_experiment(experiment_id=experiment_id)
 
 # Set the tracking URI to a valid HTTP or HTTPS URI
-mlflow.set_tracking_uri("http://127.0.0.1:8080")
+mlflow.set_tracking_uri(f"http://{mlflow_lb_dns_name}:5000")
 
 df = pd.read_csv(r"data\BankChurners_preprocessed.csv")
 # Define the feature matrix X and the target vector y
