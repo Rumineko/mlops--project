@@ -69,6 +69,17 @@ Give it some time to run, and it should set up your instance for you. Once the i
 
 ![Mlflow](./assets/mlflow.png)
 
+## ⚡ Predictions
+
+Included in this project, is my adaptation of [Nasrin's]() logistic regression prediction model, which uses Optuna to tune Hyperparameters. 
+If you are not running Terraform+AWS, and instead are running things locally, you can locally host a webserver to make predictions to a model.
+Once you have your MLFlow server running, you can execute the `logi_reg.py` file to have it find and create the best model. Afterwards, it will output the run id in your terminal, or you can also find it by looking at your MLFlow server and finding the model.
+Assuming you have Pyenv installed in your system, you can run this command in your terminal:
+```
+mlflow models serve -m runs:/{your_run_id}/model -p 1234
+```
+Just replace {your_run_id} with your model's run ID, and assuming you don't encounter any permission errors (which likely can be bypassed by running Powershell/CMD/Terminal as Administrator), it should start a webserver locally, which you can then use `logi_reg_serve_test.py` to make some predictions with the model.
+
 ## 📦 Project Structure
 
 ```
@@ -88,6 +99,7 @@ Give it some time to run, and it should set up your instance for you. Once the i
 │   └── variables.tf
 ├── .gitattributes
 ├── .gitignore
+├── logi_reg_serve_test.py
 ├── logi_reg.py
 ├── README.md
 └── requirements.txt

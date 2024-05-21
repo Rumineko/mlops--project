@@ -48,7 +48,7 @@ experiment_id = get_or_create_experiment("BankChurners")
 mlflow.set_experiment(experiment_id=experiment_id)
 
 # Set the tracking URI to a valid HTTP or HTTPS URI
-mlflow.set_tracking_uri(f"http://{mlflow_lb_dns_name}:5000")
+mlflow.set_tracking_uri(f"http://127.0.0.1:8080")
 
 df = pd.read_csv(r"data\BankChurners_preprocessed.csv")
 # Define the feature matrix X and the target vector y
@@ -142,3 +142,5 @@ with mlflow.start_run():
         "runs:/{run_id}/model".format(run_id=mlflow.active_run().info.run_id),
         "BankChurners",
     )
+
+    print("Run ID is ", mlflow.active_run().info.run_id)
