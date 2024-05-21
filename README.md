@@ -92,3 +92,13 @@ Give it some time to run, and it should set up your instance for you. Once the i
 ├── README.md
 └── requirements.txt
 ```
+
+
+## ⌛ Project Timeline
+
+This project was created in about a week, as a part of my training at BeCode.
+
+
+## 👍 Get Into Contact
+
+You can find me here on [LinkedIn](https://www.linkedin.com/in/alice-edcm/).
