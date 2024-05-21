@@ -15,5 +15,5 @@ variable "db_password" {
 
 variable "s3_bucket_name" {
   description = "The name of the S3 bucket for MLflow artifacts"
-  default     = "mlflow-froge"
+  default     = "mlflowfroge"
 }

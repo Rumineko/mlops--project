@@ -1,7 +1,7 @@
 resource "aws_instance" "mlflow" {
-  ami             = "ami-0233214e13e500f77" # Replace with a valid AMI ID for eu-central-1
+  ami             = "ami-0233214e13e500f77"
   instance_type   = "t2.micro"
-  key_name        = aws_key_pair.mykey.key_name
+  key_name        = "mlflowfroge"
   security_groups = [aws_security_group.mlflow_sg.name]
 
   tags = {

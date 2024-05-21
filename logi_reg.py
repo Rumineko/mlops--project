@@ -20,7 +20,7 @@ matplotlib.use("Agg")
 outputs = subprocess.check_output(["terraform", "output", "-json"])
 outputs = json.loads(outputs)
 
-mlflow_lb_dns_name = outputs["mlflow_lb_dns_name"]["value"]
+mlflow_lb_dns_name = ""
 
 
 def get_or_create_experiment(experiment_name):
