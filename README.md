@@ -44,7 +44,7 @@ This project was created with the intention of using Terraform to create an AWS 
 You are also required to have Terraform installed. You can download it [here](https://developer.hashicorp.com/terraform/install?product_intent=terraform), and all you need to do is add it to your system environment's PATH variable.
 ## 👩‍💻 Usage
 
-This project uses Terraform to create an AWS instance. The only pre-requirement is to have an already existing Key-Pair for an EC2 instance, which you can create [right here](https://eu-central-1.console.aws.amazon.com/ec2/home?region=eu-central-1#KeyPairs:). You put the key name under the `key_name` field inside of `/terraform/ec2.tf.
+This project uses Terraform to create an AWS instance. The only pre-requirement is to have an already existing Key-Pair for an EC2 instance, which you can create [right here](https://eu-central-1.console.aws.amazon.com/ec2/home?region=eu-central-1#KeyPairs:). You put the key name under the `key_name` field inside of `/terraform/ec2.tf`.
 
 ![Keypair](./assets/keypair.png)
 ![Key](./assets/key.png)
