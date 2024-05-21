@@ -75,6 +75,7 @@ Give it some time to run, and it should set up your instance for you. Once the i
 .
 ├── assets/
 │   ├── key.png
+│   ├── keypair.png
 │   └── mlflow.png
 ├── data/
 │   └── BankChurners_preprocessed.csv
