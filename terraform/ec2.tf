@@ -23,7 +23,7 @@ resource "aws_instance" "mlflow" {
               mlflow server \
                 --backend-store-uri postgresql://${var.db_username}:${var.db_password}@${aws_db_instance.mlflow_db.address}:5432/mlflowdb \
                 --default-artifact-root s3://${aws_s3_bucket.mlflow_bucket.bucket} \
-                --host 0.0.0.0 --port 8080
+                --host 0.0.0.0 --port 5000
               EOF
 }
 
