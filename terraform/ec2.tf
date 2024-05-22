@@ -3,6 +3,7 @@ resource "aws_instance" "mlflow" {
   instance_type   = "t2.micro"
   key_name        = "mlflowfroge"
   security_groups = [aws_security_group.mlflow_sg.name]
+  iam_instance_profile = aws_iam_instance_profile.profile.name
 
   tags = {
     Name = "MLFlow-Instance"

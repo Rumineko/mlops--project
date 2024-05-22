@@ -8,6 +8,13 @@ resource "aws_security_group" "mlflow_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]  # Allow SSH from anywhere; for security, restrict to your IP range
   }
+  
+  ingress {
+    from_port   = 5000
+    to_port     = 5000
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]  # Allow MLFlow port access from anywhere; for security, restrict to your IP range
+  }
 
   egress {
     from_port   = 0
